@@ -1,0 +1,24 @@
+---
+title: "Análisis Exploratorio de Datos con mtcars"
+author: "Tu Nombre"
+output:
+  html_document:
+    theme: readable
+    toc: true
+    toc_depth: 3
+---
+
+# Cargar el conjunto de datos mtcars
+data(mtcars)
+head(mtcars)
+library(knitr)
+kable(head(mtcars), caption = "Primeras filas del conjunto de datos mtcars")
+library(DT)
+datatable(head(mtcars), caption = "Tabla interactiva de mtcars")
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Relación entre Peso y Consumo de Combustible",
+       x = "Peso (wt)",
+       y = "Consumo de Combustible (mpg)") +
+  theme_minimal()
